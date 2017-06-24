@@ -1,47 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="org.androidtown.myapplication.MainActivity">
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="100dp"
+        android:id="@+id/button_schedule"
+        android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
 
+        android:onClick="onClicked_schedule"
         android:text="Schedule"
         app:layout_constraintLeft_toLeftOf="parent"
         tools:layout_editor_absoluteY="39dp" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="100dp"
+        android:layout_width="match_parent"
         android:layout_height="100dp"
         android:text="Button"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         tools:layout_editor_absoluteY="39dp" />
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="100dp"
+        android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginRight="16dp"
+
         android:text="Button"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+
         app:layout_constraintRight_toRightOf="parent"
         tools:layout_editor_absoluteY="39dp" />
 
     <Button
-        android:id="@+id/button4"
-        android:layout_width="100dp"
+        android:id="@+id/button_off"
+        android:layout_width="match_parent"
         android:layout_height="100dp"
         android:text="Off"
+        android:onClick="onClicked_off"
         tools:layout_editor_absoluteY="387dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="60dp"
+
         app:layout_constraintRight_toRightOf="parent" />
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

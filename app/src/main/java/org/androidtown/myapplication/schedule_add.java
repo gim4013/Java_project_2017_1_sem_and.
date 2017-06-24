@@ -3,12 +3,10 @@ package org.androidtown.myapplication;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.DatePicker;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -16,20 +14,14 @@ import android.widget.Toast;
 public class schedule_add extends AppCompatActivity {
     final int DIALOG_DATE = 1;
     final int DIALOG_TIME = 2;
-
+/*
     Intent intent_year = new Intent(this,schedule.class);
     Intent intent_month = new Intent(this,schedule.class);
     Intent intent_day = new Intent(this,schedule.class);
     Intent intent_hour = new Intent(this,schedule.class);
     Intent intent_min = new Intent(this,schedule.class);
     Intent intent_text = new Intent(this,schedule.class);
-
-    public void Keyborad()
-    {
-        EditText et = (EditText) findViewById(R.id.editText);
-        String memo = et.getText().toString();
-        intent_text.putExtra("memo",memo);
-    }
+*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,9 +50,11 @@ public class schedule_add extends AppCompatActivity {
                                         Toast.makeText(getApplicationContext(), year + "년 " + (monthOfYear + 1) + "월 " + dayOfMonth + "일 을 선택했습니다", Toast.LENGTH_SHORT).show();
                                         TextView textView1 = (TextView)findViewById(R.id.textView1);
                                         textView1.setText(year + "년 " + (monthOfYear + 1) + "월 " + dayOfMonth+"일");
+                                        /*
                                         intent_year.putExtra("year",year);
                                         intent_month.putExtra("month",monthOfYear);
                                         intent_day.putExtra("day",dayOfMonth);
+                                        */
                                     }
                                 }
                                 , // 사용자가 날짜설정 후 다이얼로그 빠져나올때
@@ -76,8 +70,8 @@ public class schedule_add extends AppCompatActivity {
                                         Toast.makeText(getApplicationContext(), hourOfDay + "시 " + minute + "분 을 선택했습니다", Toast.LENGTH_SHORT).show();
                                         TextView textView2 = (TextView)findViewById(R.id.textView2);
                                         textView2.setText(hourOfDay + "시 " + minute + "분");
-                                        intent_hour.putExtra("hour",hourOfDay);
-                                        intent_min.putExtra("min",minute);
+                                        /*intent_hour.putExtra("hour",hourOfDay);
+                                        intent_min.putExtra("min",minute);*/
                                     }
                                 }, // 값설정시 호출될 리스너 등록
                                 4, 19, false); // 기본값 시분 등록

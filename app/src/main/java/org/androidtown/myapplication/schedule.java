@@ -19,5 +19,9 @@ public class schedule extends AppCompatActivity {
         Intent myIntent = new Intent(schedule.this,schedule_add.class);
         startActivity(myIntent);
     }
+    public void onClicked_check(View v)
+    {
+
+    }
 
 }

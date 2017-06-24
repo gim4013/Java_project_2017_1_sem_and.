@@ -59,6 +59,7 @@
                 android:layout_width="200dp"
                 android:layout_height="100dp"
                 android:layout_marginLeft="10dp"
+                android:onClick="onClicked_save"
                 android:text="save"/>
 
             <Button
@@ -66,6 +67,7 @@
                 android:layout_width="150dp"
                 android:layout_height="100dp"
                 android:layout_marginLeft="10dp"
+                android:onClick="onClicked_goBack"
                 android:text="Back"/>
 
         </LinearLayout>

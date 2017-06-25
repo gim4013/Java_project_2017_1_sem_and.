@@ -23,7 +23,7 @@
         android:id="@+id/button_current_time"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:text="Button"
+        android:text="Current Time"
         android:onClick="onClicked_current_time"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
@@ -32,17 +32,6 @@
         app:layout_constraintRight_toRightOf="parent"
         tools:layout_editor_absoluteY="39dp" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-
-        android:text="Button"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-
-        app:layout_constraintRight_toRightOf="parent"
-        tools:layout_editor_absoluteY="39dp" />
 
     <Button
         android:id="@+id/button_off"

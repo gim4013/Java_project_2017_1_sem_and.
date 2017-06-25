@@ -21,7 +21,13 @@ public class schedule extends AppCompatActivity {
     }
     public void onClicked_check(View v)
     {
+        Toast.makeText(getApplicationContext(),"Check the Schedule",Toast.LENGTH_LONG).show();
 
+    }
+    public void onClicked_goBack2(View v)
+    {
+        Intent myintent = new Intent(this,MainActivity.class);
+        startActivity(myintent);
     }
 
 }

@@ -13,17 +13,49 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.orm.SugarRecord;
+
 public class schedule_add extends AppCompatActivity {
     final int DIALOG_DATE = 1;
     final int DIALOG_TIME = 2;
 
-    Intent myIntent = new Intent(this,schedule.class);
+    public class schedule_data extends SugarRecord<schedule_data>{
+        int year;
+        int month;
+        int day;
+        int hour;
+        int min;
+        String memo;
 
-    EditText et = (EditText)findViewById(R.id.editText);
+        public schedule_data() { }
+        public schedule_data(int year, int month, int day)
+        {
+            this.year = year;
+            this.month = month;
+            this.day = day;
+        }
+        public schedule_data(int hour, int min)
+        {
+            this.hour = hour;
+            this.min = min;
+        }
+        public schedule_data(String memo)
+        {
+            this.memo = memo;
+        }
+
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedule_add);
+
+        EditText et = (EditText)findViewById(R.id.editText);
+        String memo_data = et.getText().toString();
+        schedule_data DB_data = new schedule_data(memo_data);
+        DB_data.save();
+
     }
     public void onClicked_date(View v)
     {
@@ -47,10 +79,9 @@ public class schedule_add extends AppCompatActivity {
                                         Toast.makeText(getApplicationContext(), year + "년 " + (monthOfYear + 1) + "월 " + dayOfMonth + "일 을 선택했습니다", Toast.LENGTH_SHORT).show();
                                         TextView textView1 = (TextView)findViewById(R.id.textView1);
                                         textView1.setText(year + "년 " + (monthOfYear + 1) + "월 " + dayOfMonth+"일");
+                                        schedule_data DB_data = new schedule_data(year,dayOfMonth,dayOfMonth);
+                                        DB_data.save();
 
-                                        myIntent.putExtra("year",year);
-                                        myIntent.putExtra("month",monthOfYear);
-                                        myIntent.putExtra("day",dayOfMonth);
                                     }
                                 }
                                 , // 사용자가 날짜설정 후 다이얼로그 빠져나올때
@@ -66,8 +97,8 @@ public class schedule_add extends AppCompatActivity {
                                         Toast.makeText(getApplicationContext(), hourOfDay + "시 " + minute + "분 을 선택했습니다", Toast.LENGTH_SHORT).show();
                                         TextView textView2 = (TextView)findViewById(R.id.textView2);
                                         textView2.setText(hourOfDay + "시 " + minute + "분");
-                                        myIntent.putExtra("hour",hourOfDay);
-                                        myIntent.putExtra("min",minute);
+                                        schedule_data DB_data = new schedule_data(hourOfDay,minute);
+                                        DB_data.save();
                                     }
                                 }, // 값설정시 호출될 리스너 등록
                                 4, 19, false); // 기본값 시분 등록
@@ -79,8 +110,16 @@ public class schedule_add extends AppCompatActivity {
     }
     public void onClicked_save(View v)
     {
-        String text = et.getText().toString();
-        myIntent.putExtra("memo",text);
-        startActivity(myIntent);
+        Toast.makeText(getApplicationContext(),"저장되었습니다.",Toast.LENGTH_LONG).show();
+        Intent myintent = new Intent(this,schedule.class) ;
+        startActivity(myintent);
     }
+    public void onClicked_goBack(View v)
+    {
+        Toast.makeText(getApplicationContext(),"저장하지 않고 되돌아 갑니다.",Toast.LENGTH_LONG).show();
+
+        Intent myintent = new Intent(this,schedule.class) ;
+        startActivity(myintent);
+    }
+
 }

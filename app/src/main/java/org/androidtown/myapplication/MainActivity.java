@@ -25,6 +25,12 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"Exit",Toast.LENGTH_LONG).show();
             finish();
         }
+        public void onClicked_current_time(View v)
+        {
+            Toast.makeText(getApplicationContext(),"Current Time",Toast.LENGTH_LONG).show();
+            Intent myIntent = new Intent(this,current_time.class);
+            startActivity(myIntent);
+        }
 
 
 
